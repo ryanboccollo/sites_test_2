@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from app_luta import view 
+from app_luta import views 
 
 urlpatterns = [
-    path('', view.base,name='base'),
+    path('admin/', admin.site.urls),
+    path('', views.index, name='index'), 
 ]
