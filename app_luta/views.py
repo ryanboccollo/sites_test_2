@@ -8,3 +8,7 @@ def organizador(request):
 
 def academia(request):
     return render(request, 'academia.html')
+
+
+def cadastro_academia(request):
+    return render(request, 'cadastro_academia.html')
