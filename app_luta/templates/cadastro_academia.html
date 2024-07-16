@@ -9,6 +9,8 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
     crossorigin="anonymous"
   />
+  <style>
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -75,13 +77,9 @@
             <input type="file" id="fotos" name="fotos" multiple><!-- muito importantante atualizar colocando uma tela onde mostr-->
         </div>
         <div>
-            <button type="submit" for="salvar">Salvar</button>
-            <p>
-            <a href="{% url 'academia' %}" class="space1">academia</a><!--link  para nova pagina (pagina cadastro ou entrar de academia) -->
+            <a href="{% url 'academia' %}" class="btn btn-primary">Salvar</a><!--link  para nova pagina (pagina cadastro ou entrar de academia) -->
+
             <button type="reset">Limpar</button>
         </div>
-</body>
-</html>
-
 </body>
 </html>

@@ -12,3 +12,6 @@ def academia(request):
 
 def cadastro_academia(request):
     return render(request, 'cadastro_academia.html')
+    
+def academia_hub(request):
+    return render(request, 'academia_hub.html')
