@@ -13,36 +13,61 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'estilo.css' %}" />
     <style>
-      contener{
-        flex-direction: column;
-      }
-      .iten{
-        height: 20vh;
-        width: 200vh;
-        background-color: rgb(241, 125, 79);
-      }
-      .iten2{
-        height: 80vh;
-        width: 200vh;
+      header,
+      nav,
+      main,
+      aside,
+      footer {
+        background-color: #a1a1a1;
         display: flex;
-        background-color: rgb(236, 110, 110);
+        margin: 6px;
       }
-      .iten3{
-        height: 200px;
-        width: 200px; 
-        background-color: black;
-        margin: 20px;
+      viewbox,
+      viewbox1 {
+        background-color: #eb7b7b;
+        display: flex;
+        margin: 6px;
+      }
+      header {
+        flex: 1 1 100vw;
+        height: 100px;
+      }
+      nav {
+        flex: 1 1 200px;
+      }
+      main {
+        flex: 20 1 500px;
+        height: calc(100vh - 224px);
+      }
+      aside {
+        flex: 20 1 200px;
+      }
+      footer {
+        flex: 1 1 100vw;
+        height: 100px;
+      }
+      viewbox {
+        flex: 2 1 0;
+      }
+      viewbox1 {
+        flex: 1 1 0;
       }
     </style>
   </head>
   <body>
-    <div class="contener">
-      <div class="iten" ></div>
-      <div class="iten2" >
-        <div class="iten3"></div>
-        <div class="iten3" ></div>
-      </div>
-    </div>
+    <header>
+      <viewbox1> viewboxI </viewbox1>
+      <viewbox> viewbox1 </viewbox>
+      <viewbox> viewbox2 </viewbox>
+      <viewbox> viewbox3 </viewbox>
+    </header>
+    <nav>nav</nav>
+    <main>
+      <viewbox> viewbox1 </viewbox>
+      <viewbox> viewbox2 </viewbox>
+      <viewbox> viewbox3 </viewbox>
+    </main>
+    <aside>aside</aside>
+    <footer>footer</footer>
   </body>
 </html>
-
