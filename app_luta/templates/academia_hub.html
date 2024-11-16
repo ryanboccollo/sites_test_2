@@ -1,62 +1,211 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-   
-    </style>
-  </head>
-  <body style="background-color: rgb(3, 114, 8);  display: flex; flex-direction: column; align-items: center; ">
-    <header>  
-      <div style="background-color: blue; width: 1840px;height: 170px; padding: 10px; display: flex;  ">
-        <Div style="background-color: brown; height: 170px; width: 170px; margin-right: 10px; "></Div>
-        <Div style="background-color: brown; height: 170px; width: 170px; flex-grow: 2;">
-          <div style="background-color: rgb(29, 201, 86); width: 1600px;height: 30px; margin: 10px;">informação</div>
-          <div style="background-color: rgb(29, 201, 86); width: 1600px;height: 30px; margin: 10px;">informação</div>
-          <div style="background-color: rgb(29, 201, 86); width: 1600px;height: 30px; margin: 10px;">informação</div>
-          <div style="background-color: rgb(29, 201, 86); width: 1600px;height: 30px; margin: 10px;">informação</div>
-        </Div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hub - Luta</title>
+ <style>
+    /* Estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-      </div>
-    </header>  
+body {
+  font-family: Arial, sans-serif;
+  background-color: #3e8e41; /* Cor de fundo principal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+/* Barra Lateral */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  background-color: #343a40; /* Cor da barra lateral */
+  position: fixed;
+  top: 0;
+  left: -250px; /* Inicialmente escondida */
+  transition: left 0.3s;
+  padding-top: 60px;
+  z-index: 999;
+}
+
+.sidebar-nav {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  padding: 15px;
+  text-align: center;
+}
+
+.sidebar-nav li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+}
+
+.sidebar-nav li a:hover {
+  background-color: #1dc958; /* Cor de hover */
+  color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Cabeçalho */
+.main-header {
+  background-color: #343a40;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header h1 {
+  font-size: 36px;
+}
+
+.menu-btn {
+  font-size: 30px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Container dos Cards */
+.hub-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+}
+
+/* Estilo dos Cards */
+.card {
+  background-color: #6c757d;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  font-size: 24px;
+  color: white;
+}
+
+.card p {
+  color: #f1f1f1;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card a {
+  text-decoration: none;
+  color: #1dc958;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.card a:hover {
+  color: #fff;
+}
+
+  </style>
+  <script>
+    // script.js
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuBtn = document.getElementById('menu-btn');
+      const sidebar = document.getElementById('sidebar');
+      const closeBtn = document.getElementById('close-btn');
     
-    <div style="background-clip: padding-box; width: 1840px;height: 990px; margin-top: 20px; display: flex; align-items: center; padding: 20px;">
-      <!-- <div style="background-color: rgb(102, 56, 3); width: 300px;height: 900px; margin: 20px; display: flex; flex-direction: column; padding: 20px;">
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-        <div style="background-color: rgb(29, 201, 86); width: 250px;height: 50px; margin: 5px;">informação</div>
-      </div> -->
-      <div style="background-color: rgb(102, 56, 3); width: 1800px;height: 900px; margin: 20px; padding: 10px; 
-            border-radius: 15px;
-            border: 5px solid transparent;
-            background-clip: padding-box;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1);
-      ">
-          <div style="background-color: rgb(29, 201, 86); width: 1500px;height: 150px; margin: 5px;">informação</div>
-          <div style="background-color: rgb(29, 201, 86); width: 1500px;height: 150px; margin: 5px;">informação</div>
-          <div style="background-color: rgb(29, 201, 86); width: 1500px;height: 150px; margin: 5px;">informação</div>
-          <div style="background-color: rgb(29, 201, 86); width: 1500px;height: 150px; margin: 5px;">informação</div>
-          <div style="background-color: rgb(29, 201, 86); width: 1500px;height: 150px; margin: 5px;">informação</div>
-         
-        </div>
-      </div>
-    </div>
+      // Abrir a barra lateral ao clicar no botão do menu
+      menuBtn.addEventListener('click', function () {
+        sidebar.style.left = '0'; // Exibe a barra lateral
+      });
+    
+      // Fechar a barra lateral ao clicar no botão de fechar
+      closeBtn.addEventListener('click', function () {
+        sidebar.style.left = '-250px'; // Esconde a barra lateral
+      });
+    });
+    
+  </script>
+</head>
+<body>
+  <!-- Barra Lateral -->
+  <div id="sidebar" class="sidebar">
+    <button id="close-btn" class="close-btn">×</button>
+    <ul class="sidebar-nav">
+      <li><a href="#">Eventos</a></li>
+      <li><a href="#">Cadastro de Lutadore</a></li>
+      <li><a href="#">Academias</a></li>
+      <li><a href="#">Notícias</a></li>
+      <li><a href="#">Perfil</a></li>
+    </ul>
+  </div>
 
-  </body>
+  <!-- Cabeçalho -->
+  <header class="main-header">
+    <div class="logo-container">
+      <h1>Hub Luta</h1>
+    </div>
+    <button id="menu-btn" class="menu-btn">☰</button>
+  </header>
+
+  <!-- Container de Cards -->
+  <div class="hub-container">
+    <div class="card">
+      <h2>Eventos de Luta</h2>
+      <p>Confira os próximos eventos de luta na sua cidade.</p>
+      <a href="#">Veja mais</a>
+    </div>
+    <div class="card">
+      <h2>Lutadores</h2>
+      <p>Conheça os melhores lutadores do momento e seus perfis.</p>
+      <a href="#">Veja mais</a>
+    </div>
+    <div class="card">
+      <h2>Academias</h2>
+      <p>Encontre academias de luta perto de você.</p>
+      <a href="#">Veja mais</a>
+    </div>
+    <div class="card">
+      <h2>Notícias</h2>
+      <p>Fique por dentro de tudo que acontece no mundo das lutas.</p>
+      <a href="#">Veja mais</a>
+    </div>
+  </div>
+</body>
 </html>

@@ -72,10 +72,13 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
+
+            <a href="{% url 'academia_hub' %}" type="submit" class="btn btn-primary w-100">Login</a>
+           
+                
         </form>
         <div class="footer-text">
-            <p>Don't have an account? <a href="/signup/">Sign Up</a></p>
+            <p>Don't have an account? <a href="{% url 'cadastro_academia' %}">Sign Up</a></p>
             <p><a href="/forgot-password/">Forgot Password?</a></p>
         </div>
     </div>
